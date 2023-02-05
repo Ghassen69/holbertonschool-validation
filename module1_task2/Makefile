@@ -1,11 +1,15 @@
-##Generate the website from the markdown and configuration files
-build:
+## Makefile
+
+build: ##Generate the website from the markdown and configuration files
 	hugo
-##Cleanup the content of the directory dist
-clean:
+
+clean: ##Cleanup the content of the directory dist
 	rm -rf dist/
 
-##Create a new blog post
-post:
+post: ## Create a new blog post
 	hugo new posts/$(POST_NAME).md
 	sed -i 's/title: .*/title: "$(POST_TITLE)"/' content/posts/$(POST_NAME).md
+
+help: ## usage: make help
+	@echo "Usage:"
+	cat Makefile | grep '##' | tr -d '##'
