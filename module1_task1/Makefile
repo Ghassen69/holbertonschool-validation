@@ -1,8 +1,8 @@
 build:
-	@hugo
+	hugo
 # Clean up the build directory
 clean:
-	rm -rf public
+	rm -rf dist/
 
 # Create a new blog post
 post:
